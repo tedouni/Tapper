@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         
         
         //guard check if nil aka textfield is empty
-        guard var _ = Double(tapTextField.text!) else{
+        guard var _ = Int(tapTextField.text!) else{
             //NEVER want an empty field. If user clears old subtotal, replace value with 0
             numberOfTaps = 0
             
