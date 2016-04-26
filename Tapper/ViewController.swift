@@ -24,7 +24,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var coinBtn: UIButton!
     
     @IBAction func coinButton(sender: AnyObject) {
-        
+ 
+
+        numberOfTaps -= 1
+        output.text = String(numberOfTaps)
+        if numberOfTaps == 0
+        {
+            self.coinBtn.hidden = true
+            output.hidden = true
+            TapperTitle.hidden = false
+            playBtn.hidden = false
+            tapTextField.hidden = false
+        }
+
         
     }
     
@@ -43,12 +55,19 @@ class ViewController: UIViewController {
         
         //If not nil update values
         numberOfTaps = Int(tapTextField.text!)!
-        TapperTitle.hidden = true
-        tapTextField.hidden = true
-        self.playBtn.hidden = true
-        coinBtn.hidden = false
-        output.hidden = false
-        output.text = String(numberOfTaps)
+        if numberOfTaps == 0
+        {
+            //do nothing
+        }else{
+            TapperTitle.hidden = true
+            tapTextField.hidden = true
+            self.playBtn.hidden = true
+            coinBtn.hidden = false
+            output.hidden = false
+            output.text = String(numberOfTaps)
+        }
+
+        
         
         
         
